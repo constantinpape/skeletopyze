@@ -1,4 +1,5 @@
 package:
+  name: skeletopyze
   {% set tagged_version = GIT_DESCRIBE_TAG|replace("v","")|replace("-", ".") %}
   version: {{tagged_version}}
 
@@ -13,13 +14,13 @@ requirements:
  build:
    - cmake
    - gcc
-   - boost >=1.6.1
+   - boost >=1.6
    - python
    - numpy
    - vigra
  run:
    - libgcc
-   - boost >=1.6.1
+   - boost >=1.6
    - python
    - numpy
    - vigra
