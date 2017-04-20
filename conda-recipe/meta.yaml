@@ -1,24 +1,25 @@
 package:
-  name: skeletopyze
-  version: "0.0.1"
+  {% set tagged_version = GIT_DESCRIBE_TAG|replace("v","")|replace("-", ".") %}
+  version: {{tagged_version}}
 
 source:
-  path: .
+  path: ..
 
 build:
-  number: 3
+  number: 1
+  string: py_{{PKG_BUILDNUM}}_g{{GIT_FULL_HASH[:7]}}
 
 requirements:
  build:
    - cmake
    - gcc
-   - boost
+   - boost >=1.6.1
    - python
    - numpy
    - vigra
  run:
    - libgcc
-   - boost
+   - boost >=1.6.1
    - python
    - numpy
    - vigra
